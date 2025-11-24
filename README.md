@@ -1,6 +1,6 @@
 # Delta Attention Fast and Accurate Sparse Attention Inference by Delta Correction
 
-![Delta Attention Results](./figures/barchart-subset.pdf)
+![Delta Attention Results](./figures/barchart-subset.png)
 
 ### Introduction
 
@@ -9,8 +9,7 @@ shift in the attention outputs. As the queries of layer `i+1` depend on the atte
 even if one were to use a sparse attention prefill and a dense attention decode, the decode may fail to match the proper keys
 for a given query due to the distributional shift. 
 
-![Delta Attention Distributional Shift Motivation](./figures/spearman-vs-output-layer-motivation.pdf)
-![Delta Attention Distributional Shift Motivation Legend](./figures/spearman-cos-legend-motivation.pdf)
+![Delta Attention Distributional Shift Motivation](./figures/spearman-vs-output-layer-motivation.png)
 
 Delta Attention solves a problem by performing query-sparse (and key-dense) attention for a small subset of query tokens in addition to
 the query-dense (and key-sparse) sparse attention method. We then take the difference between the query sparse output and the sparse attention 
@@ -18,7 +17,7 @@ output. The difference is then repeated for all missing queries and summed toget
 result is an attention output that is closer in cosine similarity to the full quadratic attention with minimal added
 overhead
 
-![Delta Attention Results](./figures/ruler-vs-latency.pdf)
+![Delta Attention Results](./figures/ruler-vs-latency.png)
 
 For more details, please have a look at our [paper here](https://arxiv.org/pdf/2505.11254)
 
